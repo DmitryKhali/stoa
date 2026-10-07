@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Стоя</title>
+<meta name="description" content="Цитаты, труды и мыслители стоической школы: Зенон, Клеанф, Хрисипп, Сенека, Мусоний Руф, Эпиктет, Иерокл, Марк Аврелий.">
+<meta name="theme-color" content="#b9b2a6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Forum&family=GFS+Didot&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Пролог: меандр рисует себя, пока компилируются шейдеры -->
+<div class="loader" id="loader" aria-hidden="true">
+  <svg class="loader__meander" viewBox="0 0 240 40" preserveAspectRatio="none"><path id="loaderPath" d=""/></svg>
+  <div class="loader__word"><span>Σ</span><span>Τ</span><span>Ο</span><span>Α</span></div>
+  <div class="loader__count" id="loaderCount">I</div>
+</div>
+
+<div class="cursor" aria-hidden="true"><div class="cursor__ring"><span class="cursor__label"></span></div><div class="cursor__dot"></div></div>
+
+<header class="nav" id="nav">
+  <a class="nav__logo" href="#top" aria-label="Стоя — наверх">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21V3h18v18H7V7h10v10h-6v-6h2"/></svg>
+    <span class="nav__logo-gr">ΣΤΟΑ</span>
+  </a>
+  <nav class="nav__links" aria-label="Разделы">
+    <a href="#oracle" data-nav="oracle">Оракул</a>
+    <a href="#control" data-nav="control">Власть</a>
+    <a href="#thinkers" data-nav="thinkers">Мыслители</a>
+    <a href="#chronos" data-nav="chronos">Хронология</a>
+    <a href="#anthology" data-nav="anthology">Собрание</a>
+    <a href="#library" data-nav="library">Библиотека</a>
+    <a href="#askesis" data-nav="askesis">Упражнения</a>
+  </nav>
+  <button class="nav__burger" id="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span></button>
+</header>
+
+<main>
+  <!-- I · Портик -->
+  <section class="hero" id="top">
+    <canvas class="hero__gl" id="heroGL" aria-hidden="true"></canvas>
+    <canvas class="hero__dust" id="heroDust" aria-hidden="true"></canvas>
+    <div class="hero__veil" aria-hidden="true"></div>
+    <div class="hero__inner">
+      <p class="hero__eyebrow"><span class="gr">Στοὰ Ποικίλη</span> · Афины · ок. 300 г. до н. э.</p>
+      <h1 class="hero__title" aria-label="Стоя"><span class="hero__word" data-split>Стоя</span></h1>
+      <blockquote class="hero__quote" id="heroQuote">
+        <span id="heroQuoteText">Препятствие делу становится делом. Что стоит на пути — становится путём.</span>
+        <span class="hero__quote-by" id="heroQuoteBy">— Марк Аврелий</span>
+      </blockquote>
+      <div class="hero__cta">
+        <a class="btn btn--light" href="#oracle" data-magnetic>Вытянуть остракон</a>
+        <a class="btn btn--outline-light" href="#thinkers" data-magnetic>Восемь мыслителей</a>
+      </div>
+    </div>
+    <div class="hero__label" id="heroLabel">
+      <button class="hero__bust-btn" id="bustNext" data-cursor="Сменить" aria-label="Показать другой бюст">
+        <span class="hero__label-kicker">Бюст в портике</span>
+        <span class="hero__label-name" id="heroName">Марк Аврелий</span>
+        <span class="hero__label-meta" id="heroMeta">121 — 180 н. э. · Император-философ</span>
+        <span class="hero__label-hint">Нажмите на бюст — появится другой мыслитель</span>
+      </button>
+    </div>
+    <div class="hero__scroll" aria-hidden="true"><span>Листайте</span><i></i></div>
+  </section>
+
+  <!-- II · Оракул -->
+  <div class="band">
+    <div class="meander-wrap"><div class="meander" aria-hidden="true"></div></div>
+    <section class="section oracle" id="oracle">
+      <header class="sec-head">
+        <span class="sec-head__num">II</span>
+        <span class="sec-head__gr">Μαντεῖον</span>
+        <h2 class="sec-head__title" data-split>Оракул</h2>
+        <p class="sec-head__lead">Афиняне писали на глиняных черепках — остраконах. Вытяните свой: на нём будет то, что сегодня стоит услышать.</p>
+      </header>
+
+      <div class="oracle__layout">
+        <div class="oracle__main">
+          <div class="chips" id="oracleChips" role="group" aria-label="Чьи слова"></div>
+          <div class="ostracon-stage" id="ostraconStage" data-cursor="Разбить"></div>
+          <div class="oracle__actions">
+            <button class="btn btn--solid btn--big" id="drawBtn" data-magnetic>Вытянуть остракон <kbd>Пробел</kbd></button>
+            <button class="btn btn--ghost btn--sm" id="copyBtn">Скопировать</button>
+            <button class="btn btn--ghost btn--sm" id="favBtn" aria-pressed="false"><svg class="laurel" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21c-4-2-7-6-7-11M12 21c4-2 7-6 7-11M6.5 13c-2 0-3-1-3.5-2.5 1.5-.3 3 .3 3.5 2.5zm-1-4C3.6 8.6 3 7.2 3.2 5.8c1.4.5 2.3 1.6 2.3 3.2zm2-3.5C6.3 4.2 6.4 2.8 7.3 2c.8 1 .9 2.4.2 3.5zm10 7.5c2 0 3-1 3.5-2.5-1.5-.3-3 .3-3.5 2.5zm1-4c1.9-.4 2.5-1.8 2.3-3.2-1.4.5-2.3 1.6-2.3 3.2zm-2-3.5c1.2-1.3 1.1-2.7.2-3.5-.8 1-.9 2.4-.2 3.5z"/></svg><span>В венок</span></button>
+          </div>
+        </div>
+        <aside class="oracle__side">
+          <div class="daily" id="daily">
+            <p class="daily__kicker">Изречение дня · <span id="dailyDate"></span></p>
+            <blockquote class="daily__text" id="dailyText"></blockquote>
+            <p class="daily__by" id="dailyBy"></p>
+          </div>
+          <div class="wreath" id="wreathBox">
+            <p class="daily__kicker">Ваш венок</p>
+            <p class="wreath__count"><span id="wreathCount">0</span> <span id="wreathWord">изречений</span></p>
+            <p class="wreath__hint">Отмечайте лавровым листом то, к чему хочется вернуться. Венок хранится в этом браузере.</p>
+            <a class="link-arrow" href="#anthology" id="wreathLink">Открыть венок</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </div>
+
+  <!-- III · Что в нашей власти -->
+  <div class="band is-dark">
+    <section class="section control" id="control">
+      <header class="sec-head sec-head--center">
+        <span class="sec-head__num">III</span>
+        <span class="sec-head__gr">Τὰ ἐφ᾽ ἡμῖν</span>
+        <h2 class="sec-head__title" data-split>Что в нашей власти</h2>
+      </header>
+      <p class="control__statement" id="statement">Из существующего одно в нашей власти, другое — нет. В нашей власти — мнение, стремление, желание, уклонение. Не в нашей власти — тело, имущество, репутация, должности.</p>
+      <p class="control__src">Эпиктет · Энхиридион, 1</p>
+
+      <div class="sorter" id="sorter">
+        <div class="sorter__vessel" data-side="mine" role="button" tabindex="0" aria-label="В нашей власти">
+          <svg class="amphora" viewBox="0 0 200 300" aria-hidden="true"></svg>
+          <span class="sorter__vlabel"><span class="gr">ἐφ᾽ ἡμῖν</span>В нашей власти</span>
+          <span class="sorter__vcount" data-count="mine">0</span>
+        </div>
+        <div class="sorter__center">
+          <p class="sorter__progress"><span id="sorterNum">1</span> / <span id="sorterTotal">12</span></p>
+          <div class="sorter__deck" id="sorterDeck"></div>
+          <p class="sorter__hint">Перетащите черепок в сосуд или нажмите <kbd>←</kbd> <kbd>→</kbd></p>
+          <p class="sorter__feedback" id="sorterFeedback" aria-live="polite"></p>
+        </div>
+        <div class="sorter__vessel" data-side="not" role="button" tabindex="0" aria-label="Не в нашей власти">
+          <svg class="amphora" viewBox="0 0 200 300" aria-hidden="true"></svg>
+          <span class="sorter__vlabel"><span class="gr">οὐκ ἐφ᾽ ἡμῖν</span>Не в нашей власти</span>
+          <span class="sorter__vcount" data-count="not">0</span>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- IV · Мыслители -->
+  <div class="band">
+    <section class="section thinkers" id="thinkers">
+      <header class="sec-head">
+        <span class="sec-head__num">IV</span>
+        <span class="sec-head__gr">Φιλόσοφοι</span>
+        <h2 class="sec-head__title" data-split>Мыслители</h2>
+        <p class="sec-head__lead">Купец, водонос, бегун, сенатор, учитель, раб и император. Наведите курсор на нишу — свет последует за ним.</p>
+      </header>
+      <div class="niches" id="niches"></div>
+    </section>
+  </div>
+
+  <!-- V · Хронология -->
+  <div class="band is-dark">
+    <section class="chronos" id="chronos">
+      <div class="chronos__pin">
+        <header class="sec-head chronos__head">
+          <span class="sec-head__num">V</span>
+          <span class="sec-head__gr">Χρόνος</span>
+          <h2 class="sec-head__title" data-split>Шесть веков</h2>
+          <p class="sec-head__lead">От суда над Сократом до смерти Марка Аврелия в дунайском походе.</p>
+        </header>
+        <div class="chronos__viewport">
+          <ol class="chronos__track" id="chronosTrack"></ol>
+        </div>
+        <div class="chronos__bar"><i id="chronosBar"></i></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- VI · Собрание -->
+  <div class="band">
+    <div class="meander-wrap"><div class="meander" aria-hidden="true"></div></div>
+    <section class="section anthology" id="anthology">
+      <header class="sec-head">
+        <span class="sec-head__num">VI</span>
+        <span class="sec-head__gr">Ἀνθολογία</span>
+        <h2 class="sec-head__title" data-split>Собрание изречений</h2>
+        <p class="sec-head__lead" id="anthologyLead">Все изречения с точными ссылками на книгу и главу. Ищите по слову, мыслителю или теме.</p>
+      </header>
+      <div class="filters" id="filters">
+        <label class="field field--search">
+          <span class="visually-hidden">Поиск по изречениям</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>
+          <input id="search" type="search" placeholder="Слово: время, гнев, свобода…" autocomplete="off">
+        </label>
+        <label class="field">
+          <span class="field__label">Мыслитель</span>
+          <select id="fThinker"><option value="">Все</option></select>
+        </label>
+        <label class="field">
+          <span class="field__label">Тема</span>
+          <select id="fTheme"><option value="">Все темы</option></select>
+        </label>
+        <label class="field">
+          <span class="field__label">Труд</span>
+          <select id="fWork"><option value="">Все труды</option></select>
+        </label>
+        <button class="toggle" id="fWreath" aria-pressed="false"><svg class="laurel" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21c-4-2-7-6-7-11M12 21c4-2 7-6 7-11"/></svg>Только венок</button>
+      </div>
+      <p class="anthology__count" id="anthologyCount" aria-live="polite"></p>
+      <div class="qgrid" id="qgrid"></div>
+      <div class="anthology__more"><button class="btn btn--ghost" id="moreBtn">Показать ещё</button></div>
+    </section>
+  </div>
+
+  <!-- VII · Библиотека -->
+  <div class="band is-dark">
+    <section class="section library" id="library">
+      <header class="sec-head">
+        <span class="sec-head__num">VII</span>
+        <span class="sec-head__gr">Βιβλιοθήκη</span>
+        <h2 class="sec-head__title" data-split>Библиотека</h2>
+        <p class="sec-head__lead">Свитки с ярлыками-силлибами, как их хранили в античных библиотеках. Наведите на свиток, чтобы его развернуть.</p>
+      </header>
+      <div class="shelf" id="shelf"></div>
+    </section>
+  </div>
+
+  <!-- VIII · Упражнения -->
+  <div class="band">
+    <div class="meander-wrap"><div class="meander" aria-hidden="true"></div></div>
+    <section class="section askesis" id="askesis">
+      <header class="sec-head">
+        <span class="sec-head__num">VIII</span>
+        <span class="sec-head__gr">Ἄσκησις</span>
+        <h2 class="sec-head__title" data-split>Упражнения</h2>
+        <p class="sec-head__lead">Стоики считали философию ежедневной практикой, как гимнастику. Шесть упражнений, которые они делали сами.</p>
+      </header>
+      <div class="practices" id="practices"></div>
+
+      <div class="memento" id="memento">
+        <div class="memento__text">
+          <p class="memento__kicker"><span class="gr">Μέμνησο ἀποθανεῖν</span> · Memento mori</p>
+          <h3 class="memento__title">Жизнь в неделях</h3>
+          <p class="memento__lead">Каждая клетка — неделя восьмидесятилетней жизни. «Мы ошибаемся, видя смерть впереди: большая её часть уже позади», — писал Сенека.</p>
+          <label class="field field--inline" for="age">
+            <span class="field__label">Ваш возраст</span>
+            <input id="age" type="number" min="1" max="99" value="33" inputmode="numeric">
+          </label>
+          <p class="memento__stats" id="mementoStats"></p>
+          <p class="memento__note">Для примера стоит 33 года. Число не сохраняется и никуда не отправляется.</p>
+        </div>
+        <canvas class="memento__grid" id="mementoGrid" aria-label="Сетка недель жизни"></canvas>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="footer is-dark">
+  <div class="footer__quote">
+    <p class="footer__gr">Μηκέτι ὅλως περὶ τοῦ οἷόν τινα εἶναι τὸν ἀγαθὸν ἄνδρα διαλέγεσθαι, ἀλλὰ εἶναι τοιοῦτον.</p>
+    <p class="footer__ru" data-split>Хватит рассуждать о том, каким должен быть хороший человек. Пора им быть.</p>
+    <p class="footer__src">Марк Аврелий · Размышления, X, 16</p>
+  </div>
+  <div class="footer__bottom">
+    <span class="footer__logo">ΣΤΟΑ</span>
+    <p>Цитаты даны в авторском переводе с греческого и латыни, с указанием книги и главы. Бюсты вылеплены формулами прямо в браузере: ни одной 3D-модели и ни одной фотографии.</p>
+    <a href="#top" class="link-arrow link-arrow--up">Наверх, в портик</a>
+  </div>
+</footer>
+
+<!-- Карточка мыслителя -->
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetName" hidden>
+  <div class="sheet__backdrop" data-close></div>
+  <div class="sheet__panel">
+    <button class="sheet__close" data-close aria-label="Закрыть">×</button>
+    <div class="sheet__portrait"><canvas id="sheetCanvas"></canvas><span class="sheet__orig" id="sheetOrig"></span></div>
+    <div class="sheet__body" id="sheetBody" data-lenis-prevent></div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.11/dist/lenis.min.js"></script>
+<script src="js/data.js"></script>
+<script src="js/stoa-gl.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

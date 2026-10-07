@@ -17,7 +17,7 @@ window.STOA_DATA = (function () {
       ],
       ideas: ['Цель жизни — жить согласно природе', 'Добродетель — единственное благо', 'Философия — сад: логика — ограда, физика — деревья, этика — плоды'],
       works: ['dl'],
-      bust: { beardLen: 0.25, beardOn: 1, hairVol: 0.3, bald: 0.3, curl: 0.35, age: 0.9, full: 0.0, drape: 1, tint: [0.44, 0.42, 0.39] }
+      photo: { src: 'assets/zeno.webp', w: 668, h: 960, kind: 'bust', hero: 1.0, credit: 'Глиптотека Ню Карлсберг, Копенгаген · фото Marie-Lan Nguyen, общественное достояние' }
     },
     {
       id: 'cleanthes', name: 'Клеанф из Асса', short: 'Клеанф', orig: 'Κλεάνθης ὁ Ἄσσιος',
@@ -32,7 +32,7 @@ window.STOA_DATA = (function () {
       ],
       ideas: ['Мир пронизан божественным разумом — логосом', 'Свобода — согласие с судьбой', 'Труд и упорство важнее одарённости'],
       works: ['hymn'],
-      bust: { beardLen: 0.85, beardOn: 1, hairVol: 0.4, bald: 0.78, curl: 0.45, age: 1.0, full: 0.15, drape: 1, tint: [0.38, 0.37, 0.35] }
+      photo: { src: 'assets/cleanthes.webp', w: 684, h: 960, kind: 'bust', hero: 0.8, credit: 'Голова, которую считают портретом Клеанфа. Глиптотека Ню Карлсберг · фото Marie-Lan Nguyen, общественное достояние' }
     },
     {
       id: 'chrysippus', name: 'Хрисипп из Сол', short: 'Хрисипп', orig: 'Χρύσιππος ὁ Σολεύς',
@@ -47,7 +47,7 @@ window.STOA_DATA = (function () {
       ],
       ideas: ['Страсть — это ошибочное суждение', 'Судьба и свобода совместимы: цилиндр катится по своей природе', 'Логика — ограда сада философии'],
       works: ['dl', 'defato'],
-      bust: { beardLen: 0.55, beardOn: 1, hairVol: 0.15, bald: 0.97, curl: 0.3, age: 1.0, full: 0.0, drape: 1, tint: [0.47, 0.45, 0.41] }
+      photo: { src: 'assets/chrysippus.webp', w: 720, h: 960, kind: 'bust', hero: 0.96, credit: 'Римская копия греческого портрета III в. до н. э. · Wikimedia Commons, общественное достояние' }
     },
     {
       id: 'seneca', name: 'Луций Анней Сенека', short: 'Сенека', orig: 'Lucius Annaeus Seneca',
@@ -62,7 +62,7 @@ window.STOA_DATA = (function () {
       ],
       ideas: ['Время — единственное, что по-настоящему наше', 'Мы страдаем больше в воображении, чем в действительности', 'Философия учит делать, а не говорить'],
       works: ['letters', 'brevitate', 'ira', 'providentia', 'vitabeata', 'tranquillitate'],
-      bust: { beardLen: 0.0, beardOn: 0, hairVol: 0.3, bald: 0.62, curl: 0.2, age: 0.65, full: 1.0, drape: 1, tint: [0.43, 0.4, 0.36] }
+      photo: { src: 'assets/seneca.webp', w: 879, h: 960, kind: 'bust', hero: 0.88, credit: 'Двойная герма Сократа и Сенеки, Античное собрание Берлина · Wikimedia Commons, CC0' }
     },
     {
       id: 'musonius', name: 'Гай Мусоний Руф', short: 'Мусоний', orig: 'Gaius Musonius Rufus',
@@ -77,7 +77,7 @@ window.STOA_DATA = (function () {
       ],
       ideas: ['Философия — это упражнение, а не лекция', 'Женщины так же способны к добродетели, как мужчины', 'Брак — совершенное содружество жизни'],
       works: ['lectures'],
-      bust: { beardLen: 0.35, beardOn: 1, hairVol: 0.55, bald: 0.15, curl: 0.75, age: 0.55, full: 0.35, drape: 1, tint: [0.41, 0.4, 0.38] }
+      photo: null, note: 'Подлинных портретов Мусония не сохранилось'
     },
     {
       id: 'epictetus', name: 'Эпиктет', short: 'Эпиктет', orig: 'Ἐπίκτητος',
@@ -92,7 +92,7 @@ window.STOA_DATA = (function () {
       ],
       ideas: ['Одно в нашей власти, другое — нет', 'Нас мучают не вещи, а суждения о них', 'Свобода — желать того, что происходит'],
       works: ['enchiridion', 'discourses'],
-      bust: { beardLen: 1.0, beardOn: 1, hairVol: 0.4, bald: 0.5, curl: 0.4, age: 0.75, full: 0.05, drape: 1, tint: [0.39, 0.37, 0.34] }
+      photo: { src: 'assets/epictetus.webp', w: 614, h: 1100, kind: 'engraving', credit: 'Фронтиспис «Энхиридиона», Оксфорд, 1715 · гравюра М. Бургерса по рисунку У. Сонманса, общественное достояние' }, note: 'Античных портретов не сохранилось. Гравюра 1715 года изображает его хромым, с костылём'
     },
     {
       id: 'hierocles', name: 'Иерокл', short: 'Иерокл', orig: 'Ἱεροκλῆς',
@@ -107,7 +107,7 @@ window.STOA_DATA = (function () {
       ],
       ideas: ['Каждый окружён кругами: семья, сограждане, человечество', 'Задача — стягивать круги к центру', 'Брак — красота и основа дома'],
       works: ['stobaeus'],
-      bust: { beardLen: 0.65, beardOn: 1, hairVol: 0.6, bald: 0.2, curl: 0.82, age: 0.5, full: 0.2, drape: 1, tint: [0.45, 0.43, 0.4] }
+      photo: null, note: 'Портретов Иерокла не сохранилось'
     },
     {
       id: 'marcus', name: 'Марк Аврелий', short: 'Марк Аврелий', orig: 'Marcus Aurelius Antoninus',
@@ -122,7 +122,7 @@ window.STOA_DATA = (function () {
       ],
       ideas: ['Препятствие становится путём', 'Каждое дело — как последнее', 'Люди рождены друг для друга'],
       works: ['meditations'],
-      bust: { beardLen: 0.42, beardOn: 1, hairVol: 1.0, bald: 0.0, curl: 1.0, age: 0.3, full: 0.3, drape: 1, tint: [0.4, 0.385, 0.36] }
+      photo: { src: 'assets/marcus.webp', w: 915, h: 1500, kind: 'bust', hero: 1.12, credit: 'Бюст из Лувра, Париж · фото Gary Todd, CC0' }
     }
   ];
 

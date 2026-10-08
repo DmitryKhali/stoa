@@ -17,7 +17,7 @@ window.STOA_DATA = (function () {
       ],
       ideas: ['Цель жизни — жить согласно природе', 'Добродетель — единственное благо', 'Философия — сад: логика — ограда, физика — деревья, этика — плоды'],
       works: ['dl'],
-      photo: { src: 'assets/zeno.webp', w: 668, h: 960, kind: 'bust', hero: 1.0, credit: 'Глиптотека Ню Карлсберг, Копенгаген · фото Marie-Lan Nguyen, общественное достояние' }
+      photo: { src: 'assets/zeno.webp', w: 668, h: 960, kind: 'bust', hero: 1.0, credit: 'Глиптотека Ню Карлсберг, Копенгаген · фото Marie-Lan Nguyen, общественное достояние · цифровая реставрация: отбитый нос восстановлен по мрамору бюста Сенеки, как делали реставраторы XVIII века' }
     },
     {
       id: 'cleanthes', name: 'Клеанф из Асса', short: 'Клеанф', orig: 'Κλεάνθης ὁ Ἄσσιος',
@@ -32,7 +32,7 @@ window.STOA_DATA = (function () {
       ],
       ideas: ['Мир пронизан божественным разумом — логосом', 'Свобода — согласие с судьбой', 'Труд и упорство важнее одарённости'],
       works: ['hymn'],
-      photo: { src: 'assets/cleanthes.webp', w: 684, h: 960, kind: 'bust', hero: 0.8, credit: 'Голова, которую считают портретом Клеанфа. Глиптотека Ню Карлсберг · фото Marie-Lan Nguyen, общественное достояние' }
+      photo: { src: 'assets/cleanthes.webp', w: 684, h: 960, kind: 'bust', hero: 0.8, credit: 'Голова, которую считают портретом Клеанфа. Глиптотека Ню Карлсберг · фото Marie-Lan Nguyen, общественное достояние · цифровая реставрация: бровь восстановлена по уцелевшей стороне лица' }
     },
     {
       id: 'chrysippus', name: 'Хрисипп из Сол', short: 'Хрисипп', orig: 'Χρύσιππος ὁ Σολεύς',
@@ -47,7 +47,7 @@ window.STOA_DATA = (function () {
       ],
       ideas: ['Страсть — это ошибочное суждение', 'Судьба и свобода совместимы: цилиндр катится по своей природе', 'Логика — ограда сада философии'],
       works: ['dl', 'defato'],
-      photo: { src: 'assets/chrysippus.webp', w: 720, h: 960, kind: 'bust', hero: 0.96, credit: 'Римская копия греческого портрета III в. до н. э. · Wikimedia Commons, общественное достояние' }
+      photo: { src: 'assets/chrysippus.webp', w: 720, h: 960, kind: 'bust', hero: 0.96, credit: 'Римская копия греческого портрета III в. до н. э. · Wikimedia Commons, общественное достояние · цифровая реставрация: снята патина' }
     },
     {
       id: 'seneca', name: 'Луций Анней Сенека', short: 'Сенека', orig: 'Lucius Annaeus Seneca',
@@ -62,7 +62,7 @@ window.STOA_DATA = (function () {
       ],
       ideas: ['Время — единственное, что по-настоящему наше', 'Мы страдаем больше в воображении, чем в действительности', 'Философия учит делать, а не говорить'],
       works: ['letters', 'brevitate', 'ira', 'providentia', 'vitabeata', 'tranquillitate'],
-      photo: { src: 'assets/seneca.webp', w: 879, h: 960, kind: 'bust', hero: 0.88, credit: 'Двойная герма Сократа и Сенеки, Античное собрание Берлина · Wikimedia Commons, CC0' }
+      photo: { src: 'assets/seneca.webp', w: 879, h: 960, kind: 'bust', hero: 0.88, credit: 'Двойная герма Сократа и Сенеки, Античное собрание Берлина · Wikimedia Commons, CC0 · цифровая реставрация: сняты пятна' }
     },
     {
       id: 'musonius', name: 'Гай Мусоний Руф', short: 'Мусоний', orig: 'Gaius Musonius Rufus',
@@ -122,7 +122,7 @@ window.STOA_DATA = (function () {
       ],
       ideas: ['Препятствие становится путём', 'Каждое дело — как последнее', 'Люди рождены друг для друга'],
       works: ['meditations'],
-      photo: { src: 'assets/marcus.webp', w: 915, h: 1500, kind: 'bust', hero: 1.12, credit: 'Бюст из Лувра, Париж · фото Gary Todd, CC0' }
+      photo: { src: 'assets/marcus.webp', w: 919, h: 1500, kind: 'bust', hero: 1.12, credit: 'Бюст из Лувра, Париж · фото Gary Todd, CC0 · цифровая реставрация: сняты патина и отсветы' }
     }
   ];
 
